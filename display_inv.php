@@ -12,6 +12,7 @@ include_once 'items_array.php';
 
 $body = "";
 $player['items'] = explode(', ', $player['info']['inventory'].", ".$player['info']['armor'].", ".$player['info']['dyes']);
+
 $i = 0;
 foreach ($player['items'] as $item) {
     $itemInfo = explode(':', $item);
@@ -101,7 +102,7 @@ foreach ($player['items'] as $item) {
             $body .= '<div class="num2">' . ($i < 9 ? $i + 1 : 0) . '</div>';
         }
         $body .= '</div>';
-        if ($itemInfo[1] > 1 && $i < 59) {
+        if ($i < 59 && $itemInfo[1] > 1) {
             $body .= '<span class="num">' . $itemInfo[1] . '</span>';
         }
         $body .= "</td>\n";
