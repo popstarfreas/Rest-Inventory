@@ -1,0 +1,296 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+body {
+    background-color: #000;
+    min-width: 950px;
+}
+
+#head {
+    text-align: center;
+    padding: 5px;
+    margin: auto;
+    width: 430px;
+    opacity:.80;
+    color: #fff;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px #000;
+}
+
+#content {
+    max-width: 1190px;
+    min-width: 1190px;
+    margin: auto;
+    padding: 5px;
+}
+
+#form textarea {
+    max-width: 430px;
+    background-color: #5CA3FF;
+    border: none;
+}
+
+#form input {
+    margin-top: 5px;
+    background-color: #4C8CE0;
+    border: solid 1px #135FC2;
+}
+
+/* Titles for areas of inventory */
+#title {
+    margin-left: 30px;
+    color: #fff;
+    font-weight: bold;
+}
+
+#title2 {
+    clear: left;
+    margin-left: 5px;
+    color: #fff;
+}
+
+#title, #Coins, #Ammo, #Armor, #Vanity, #Dye, #Buffs, #Position {
+    text-shadow: 2px 2px 2px #000;
+}
+
+#Coins {
+    font-size: 90%;
+    margin-left: 4px;
+}
+
+#Ammo {
+    font-size: 90%;
+    margin-left: 1px;
+    position: relative;
+    top: 0.1em;
+}
+
+#Armor, #Vanity, #Dye {
+    margin-right: 4px;
+}
+
+/* Tables for Inventory Display */
+#inv_table {
+    float: left;
+    margin-left: 10px;
+    height: 200px;
+}
+
+#Coins_table {
+    float: left;
+    margin-top: 3.8em;
+    color: #fff;
+}
+
+#Ammo_table {
+    float: left;
+    margin-top: 3.7em;
+    color: #fff;
+    clear: right;
+}
+
+#Buffs {
+    clear: both;
+    color: #fff;
+    font-weight: bold;
+    margin-left: 25px;
+}
+
+#Buff_table {
+    margin-top: 5px;
+    margin-left: 15px;
+}
+
+#Buff_table .buffImg {
+    float: left;
+    margin-right: 5px;
+    opacity: 0.7;
+}
+
+#Position {
+    clear: left;
+    margin-left: 25px;
+    color: #fff;
+}
+
+.stuff_table {
+    margin-top: 1em;
+    float: right;
+    color: #fff;
+    text-align: center;
+}
+
+.stuff_tableFix {
+    margin-right: 3em;
+}
+
+.stuff_tableFix table {
+    margin-top: 2px;
+}
+
+td {
+    position: relative;
+}
+
+/* Item Object Properties */
+#Ammo_table .item, #Coins_table .item {
+    font-size: 65%;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    width: 3em;
+    height: 3em;
+    border: solid 1px #1B1585;
+    padding: 5px;
+    background-color: #30308C;
+    position: relative;
+    border-radius: 10px;
+    opacity: 0.85;
+}
+
+#Ammo_table td .num, #Coins_table td .num {
+    position: absolute;
+    left: 8px;
+    bottom: 10px;
+    font-size: 75%;
+    font-weight: bold;
+    color: #fff;
+}
+
+.stuff_table .item {
+    margin-right: 3px;
+    background-color: #287A65;
+    border-color: #266152;
+}
+
+.stuff_tableL .item {
+    margin-right: 3px;
+    background-color: #22646B;
+    border-color: #16454A;
+}
+
+.stuff_tableFix .item {
+    margin-right: 3px;
+    background-color: #3E7836;
+    border-color: #2B5925;
+}
+
+.item {
+    margin-right: 5px;
+    margin-bottom: 5px;
+    width: 3em;
+    height: 3em;
+    border: solid 1px #1B1585;
+    padding: 5px;
+    background-color: #30308C;
+    position: relative;
+    border-radius: 10px;
+    font-size: 13px;
+    opacity: 0.85;
+}
+
+td .num {
+    position: absolute;
+    left: 8px;
+    bottom: 10px;
+    font-size: 90%;
+    font-weight: bold;
+    color: #fff;
+}
+
+td .num2 {
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    font-size: 11px;
+    font-weight: bold;
+    color: #fff;
+}
+
+#Coins_table .item2, #Ammo_table .item2 {
+    top: 0;
+    left: -3px;
+}
+
+.stuff_table .item2 {
+    left: 0;
+}
+
+.item2 {
+    margin-right: 5px;
+    margin-bottom: 5px;
+    width: 3em;
+    height: 3em;
+    padding: 5px;
+    position: absolute;
+    top: 2px;
+    left: 1px;
+    border-radius: 10px;
+    font-size: 13px;
+    opacity: 0.85;
+    display: table;
+    text-align: center;
+}
+
+#Ammo_table .item2 img {
+    max-height: 25px;
+    max-width: 25px;
+}
+
+#Coins_table img {
+    max-height: 14px;
+    max-width: 14px;
+}
+
+.item2 .img {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.item2 img {
+    max-height: 32px;
+    max-width: 35px;
+}
+
+.empty {
+    margin-left: 6px;
+    color: #2670D1;
+}
+
+.error {
+    position: absolute;
+    left: 8px;
+    bottom: 10px;
+    font-size: 13px;
+    font-weight: bold;
+    color: #fff;
+}
+#error {
+    border: 1px solid;
+    margin: 10px 0;
+    padding:15px 10px 15px 50px;
+    background-repeat: no-repeat;
+    background-position: 10px center;
+    color: #D8000C;
+    background-color: #FFBABA;
+    background-image: url('images/Backgrounds/msg.png');
+}
+
+/* Used to make a new line */
+.break {
+    height: 60px;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+    text-shadow: 2px 2px 1px #000;
+    margin-left: 15px;
+}
+
+#players a {
+    color: #fff;
+    text-decoration: none;
+}
