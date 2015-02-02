@@ -21,7 +21,10 @@ $list .= '</div>';
 ?>
 <!DOCTYPE html>
 <html>
-<head>
+<head profile="http://www.w3.org/2005/10/profile">
+    <link rel="icon"
+          type="image/png"
+          href="favicon.png">
     <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
     <link href='https://fonts.googleapis.com/css?family=Noto+Sans:400,700,400italic' rel='stylesheet' type='text/css'/>
     <link rel="stylesheet" href="styles.css" type="text/css"/>

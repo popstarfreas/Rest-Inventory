@@ -19,7 +19,7 @@ foreach ($player['items'] as $item) {
     if ($i >= 59 && $i < 75 && $itemInfo[0] !== "0") {
         $item_name2 = "";
         $counter = 0;
-        $item_name2 = $itemInfo[0] > 0 ? $itemIDs[$itemInfo[0]] : $itemNIDs[$itemInfo[0]];
+        $item_name2 = str_replace(' ', '_', $itemInfo[0] > 0 ? $itemIDs[$itemInfo[0]] : $itemNIDs[$itemInfo[0]]) . '.png';
         $img_tag = '<img title="' . substr($item_name2, 0, -4) . '" src="items_images/' . $item_name2 . '"/>';
     } else {
         if ($itemInfo[0] !== "0") {
@@ -120,7 +120,10 @@ $body .= '<a href="?">Go back</a>';
 
 <!DOCTYPE html>
 <html>
-<head>
+<head profile="http://www.w3.org/2005/10/profile">
+    <link rel="icon"
+          type="image/png"
+          href="favicon.png">
     <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
     <link href='https://fonts.googleapis.com/css?family=Noto+Sans:400,700,400italic' rel='stylesheet' type='text/css'/>
     <link rel="stylesheet" href="styles.css" type="text/css"/>
