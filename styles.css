@@ -287,6 +287,11 @@ a {
     color: #000;
 }
 
+#users a {
+    color: #fff;
+    text-shadow: 1px 1px 2px #000;
+}
+
 #players a {
     text-decoration: none;
 }

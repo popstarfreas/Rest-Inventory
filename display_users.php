@@ -12,7 +12,7 @@ $list = '<div id="players">';
 foreach ($player['list'] as $player) {
     if (is_array($player)) {
         foreach ($player as $p) {
-            $list .= '<a href="?player=' . str_replace('#', '%23', $p['nickname']) . '">' . $p['nickname'] . '<br />';
+            if (!empty($p)) $list .= '<a href="?player=' . str_replace('#', '%23', $p['nickname']) . '">' . $p['nickname'] . '<br />';
         }
     }
 }
@@ -30,7 +30,7 @@ $list .= '</div>';
     <link rel="stylesheet" href="styles.css" type="text/css"/>
     <title>T-Inv</title>
 </head>
-<body>
+<body id="users">
 <form action="" method="GET">
     <input type="text" name="player"/>
     <input type="submit" value="Read"/>
