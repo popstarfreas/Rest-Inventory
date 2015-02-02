@@ -7,7 +7,7 @@
  * This file extracts the zip in items_images
  */
 
-if(!defined('index')) exit;
+if (!defined('index')) exit;
 // File
 $file = 'items_images/items.zip';
 
@@ -20,13 +20,13 @@ $path = pathinfo(realpath($file), PATHINFO_DIRNAME);
 $zip = new ZipArchive;
 $res = $zip->open($file);
 if ($res === TRUE) {
-    // extract it to the path we determined above
+// extract it to the path we determined above
     $zip->extractTo($path);
     $zip->close();
 
-    // Setup has completed
+// Setup has completed
     $setup = true;
-
-    // Delete zip
+    
+// Delete zip
     unlink('items_images/items.zip');
 }

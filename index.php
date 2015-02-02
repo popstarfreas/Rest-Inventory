@@ -48,12 +48,6 @@ $useBG = true;
 $rand = rand(1,3);
 $defaultBG = "backgrounds/$rand.jpg";
 
-/* If you want to use the DB module for getting images based on the users location, set to true
-   Default:
-   $imagedb_use = false;
-*/
-$imagedb_use = false;
-
 // Initial variable assignments
 $player['GET'] = null;
 $location = "$ip:$port";
@@ -78,7 +72,7 @@ if (!isset($_GET['player'])) {
     exit;
 }
 
-// Set player GET to the player to GET ;)
+// Remove spaces
 $player['GET'] = str_replace(' ', '%20', $_GET['player']);
 
 // Grab a token
@@ -95,10 +89,6 @@ if (isset($token->token)) {
     exit('Server failed to respond.');
 }
 
-if($imagedb_use) {
-    include 'db_module.php';
-} else {
-    $background = $defaultBG;
-}
+$background = $defaultBG;
 
 include_once 'display_inv.php';

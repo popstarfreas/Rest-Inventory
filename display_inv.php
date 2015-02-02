@@ -19,18 +19,8 @@ foreach ($player['items'] as $item) {
     if ($i >= 59 && $i < 75 && $itemInfo[0] !== "0") {
         $item_name2 = "";
         $counter = 0;
-        $itemNameArr = preg_split('/(?=[A-Z])/',($itemInfo[0] > 0 ? $itemIDs[$itemInfo[0]] : $itemNIDs[abs($itemInfo[0])]));
-        foreach($itemNameArr as $split) {
-            if ($counter > 0) {
-                if ($counter == count($itemNameArr)-1) {
-                    $item_name2 .= $split.'.png';
-                } else {
-                    $item_name2 .= $split.'_';
-                }
-            }
-            $counter++;
-        }
-        $img_tag = '<img title="'.str_replace('_', ' ', substr($item_name2, 0, -4)).'" src="items_images/' . $item_name2 . '"/>';
+        $item_name2 = $itemInfo[0] > 0 ? $itemIDs[$itemInfo[0]] : $itemNIDs[$itemInfo[0]];
+        $img_tag = '<img title="' . substr($item_name2, 0, -4) . '" src="items_images/' . $item_name2 . '"/>';
     } else {
         if ($itemInfo[0] !== "0") {
             $item_name2 = str_replace(" ", "_", $itemInfo[0]) . ".png";
