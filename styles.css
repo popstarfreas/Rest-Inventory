@@ -5,7 +5,6 @@
 }
 
 body {
-    background-color: #000;
     min-width: 950px;
 }
 
@@ -15,7 +14,6 @@ body {
     margin: auto;
     width: 430px;
     opacity:.80;
-    color: #fff;
     font-weight: bold;
     text-shadow: 1px 1px 2px #000;
 }
@@ -285,12 +283,9 @@ td .num2 {
 
 a {
     text-decoration: none;
-    color: #fff;
-    text-shadow: 2px 2px 1px #000;
     margin-left: 15px;
 }
 
 #players a {
-    color: #fff;
     text-decoration: none;
 }
