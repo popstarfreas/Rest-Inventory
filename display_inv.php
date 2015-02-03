@@ -17,8 +17,6 @@ $i = 0;
 foreach ($player['items'] as $item) {
     $itemInfo = explode(':', $item);
     if ($i >= 59 && $i < 75 && $itemInfo[0] !== "0") {
-        $item_name2 = "";
-        $counter = 0;
         $item_name2 = str_replace(' ', '_', $itemInfo[0] > 0 ? $itemIDs[$itemInfo[0]] : $itemNIDs[$itemInfo[0]]) . '.png';
         $img_tag = '<img title="' . substr($item_name2, 0, -4) . '" src="items_images/' . $item_name2 . '"/>';
     } else {
@@ -70,6 +68,8 @@ foreach ($player['items'] as $item) {
         $body .= '<span id="'.($i === 67 ? 'Vanity' : 'Dye').'">'.($i === 67 ? 'Social' : 'Dye').'</span><table><tr>';
     }
 
+    // The last table has only 1 row per table so we close the current row
+    // and open a new one here.
     if($i > 59) {
         $body .= '</tr><tr>';
     }
@@ -77,7 +77,6 @@ foreach ($player['items'] as $item) {
 
     if ($itemInfo[0] == "" || $item_name2 == "") {
         if ($i === 58) {
-
         } else {
             $body .= '<td><div class="item"><div class="item2"><span class="empty"></span></div>';
             if ($i < 10) {
@@ -102,6 +101,7 @@ foreach ($player['items'] as $item) {
 $body .= '</tr></table></div>';
 
 $body .= '<div id="Buffs">Buffs</div><div id="Buff_table">';
+
 // Display buffs
 $buffs = explode(', ', $player['info']['buffs']);
 $i = 0;
@@ -116,6 +116,8 @@ $body .= '</div>';
 // Display Player Position
 $body .= '<div id="Position">Position: <em>'.$player['info']['position'].'</em></div>';
 $body .= '<a href="?">Go back</a>';
+
+// HTML
 ?>
 
 <!DOCTYPE html>
