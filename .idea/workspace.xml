@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9d065b41-d906-49f8-9077-3dcd22a4662d" name="Default" comment="Updated zip">
+    <list default="true" id="9d065b41-d906-49f8-9077-3dcd22a4662d" name="Default" comment="Fixed user list color">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Rest-Inventory.zip" afterPath="$PROJECT_DIR$/Rest-Inventory.zip" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -72,11 +72,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="styles.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="styles.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/styles.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="4233" max-vertical-offset="5219">
-              <caret line="276" column="1" selection-start-line="276" selection-start-column="1" selection-end-line="276" selection-end-column="1" />
+            <state vertical-scroll-proportion="0.24528302" vertical-offset="4284" max-vertical-offset="5202">
+              <caret line="265" column="16" selection-start-line="265" selection-start-column="16" selection-end-line="265" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -105,10 +105,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="display_inv.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="display_inv.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/display_inv.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.49485713" vertical-offset="1471" max-vertical-offset="2346">
+            <state vertical-scroll-proportion="-16.653847" vertical-offset="1471" max-vertical-offset="2346">
               <caret line="117" column="47" selection-start-line="117" selection-start-column="47" selection-end-line="117" selection-end-column="47" />
               <folding />
             </state>
@@ -349,7 +349,19 @@
       <option name="project" value="LOCAL" />
       <updated>1423176818130</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Updated zip">
+      <created>1423176991612</created>
+      <option name="number" value="00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1423176991612</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Fixed user list color">
+      <created>1423177151285</created>
+      <option name="number" value="00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1423177151285</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -405,7 +417,8 @@
     <MESSAGE value="Added a zip for the files" />
     <MESSAGE value="Fixed return link shadow and color" />
     <MESSAGE value="Updated zip" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated zip" />
+    <MESSAGE value="Fixed user list color" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed user list color" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -806,10 +819,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/styles.css">
+    <entry file="file://$PROJECT_DIR$/display_inv.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="4233" max-vertical-offset="5219">
-          <caret line="276" column="1" selection-start-line="276" selection-start-column="1" selection-end-line="276" selection-end-column="1" />
+        <state vertical-scroll-proportion="-16.653847" vertical-offset="1471" max-vertical-offset="2346">
+          <caret line="117" column="47" selection-start-line="117" selection-start-column="47" selection-end-line="117" selection-end-column="47" />
           <folding />
         </state>
       </provider>
@@ -822,10 +835,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/display_inv.php">
+    <entry file="file://$PROJECT_DIR$/styles.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.49485713" vertical-offset="1471" max-vertical-offset="2346">
-          <caret line="117" column="47" selection-start-line="117" selection-start-column="47" selection-end-line="117" selection-end-column="47" />
+        <state vertical-scroll-proportion="0.24528302" vertical-offset="4284" max-vertical-offset="5202">
+          <caret line="265" column="16" selection-start-line="265" selection-start-column="16" selection-end-line="265" selection-end-column="16" />
           <folding />
         </state>
       </provider>
