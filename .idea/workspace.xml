@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9d065b41-d906-49f8-9077-3dcd22a4662d" name="Default" comment="Fixed user list color">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/items_array.php" afterPath="$PROJECT_DIR$/items_array.php" />
+    <list default="true" id="9d065b41-d906-49f8-9077-3dcd22a4662d" name="Default" comment="Fixed Doctor Items">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Rest-Inventory.zip" afterPath="$PROJECT_DIR$/Rest-Inventory.zip" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Rest_Inventory.iws" />
@@ -98,8 +98,8 @@
       <file leaf-file-name="items_array.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/items_array.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.33333334" vertical-offset="5361" max-vertical-offset="47753">
-              <caret line="332" column="23" selection-start-line="332" selection-start-column="23" selection-end-line="332" selection-end-column="23" />
+            <state vertical-scroll-proportion="0.45347467" vertical-offset="5361" max-vertical-offset="47753">
+              <caret line="338" column="27" selection-start-line="338" selection-start-column="27" selection-end-line="338" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -373,7 +373,13 @@
       <option name="project" value="LOCAL" />
       <updated>1423177333829</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Fixed Doctor Items">
+      <created>1423177400058</created>
+      <option name="number" value="00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1423177400058</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -430,7 +436,8 @@
     <MESSAGE value="Fixed return link shadow and color" />
     <MESSAGE value="Updated zip" />
     <MESSAGE value="Fixed user list color" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed user list color" />
+    <MESSAGE value="Fixed Doctor Items" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed Doctor Items" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -849,8 +856,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/items_array.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334" vertical-offset="5361" max-vertical-offset="47753">
-          <caret line="332" column="23" selection-start-line="332" selection-start-column="23" selection-end-line="332" selection-end-column="23" />
+        <state vertical-scroll-proportion="0.45347467" vertical-offset="5361" max-vertical-offset="47753">
+          <caret line="338" column="27" selection-start-line="338" selection-start-column="27" selection-end-line="338" selection-end-column="27" />
           <folding />
         </state>
       </provider>
