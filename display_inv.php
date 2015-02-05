@@ -115,7 +115,7 @@ $body .= '</div>';
 
 // Display Player Position
 $body .= '<div id="Position">Position: <em>'.$player['info']['position'].'</em></div>';
-$body .= '<a href="?">Go back</a>';
+$body .= '<a id="return" href="?">Go back</a>';
 
 // HTML
 ?>
