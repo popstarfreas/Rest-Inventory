@@ -114,7 +114,17 @@ foreach($buffs as $buff) {
 $body .= '</div>';
 
 // Display Player Position
+if ($config['display_position'])
 $body .= '<div id="Position">Position: <em>'.$player['info']['position'].'</em></div>';
+
+// Display Player Group
+if ($config['display_group'])
+    $body .= '<div id="Group">Group: <em>' . $player['info']['group'] . '</em></div>';
+
+// Display IP
+if ($config['display_ip'])
+    $body .= '<div id="UserIP">IP: <em>' . $player['info']['ip'] . '</em></div>';
+
 $body .= '<a id="return" href="?">Go back</a>';
 
 // HTML

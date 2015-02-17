@@ -50,7 +50,7 @@ body {
     color: #fff;
 }
 
-#title, #Coins, #Ammo, #Armor, #Vanity, #Dye, #Buffs, #Position {
+#title, #Coins, #Ammo, #Armor, #Vanity, #Dye, #Buffs, #Position, #Group, #UserIP {
     text-shadow: 2px 2px 2px #000;
 }
 
@@ -108,7 +108,7 @@ body {
     opacity: 0.7;
 }
 
-#Position {
+#Position, #Group, #UserIP {
     clear: left;
     margin-left: 25px;
     color: #fff;
@@ -264,16 +264,6 @@ td .num2 {
     font-size: 13px;
     font-weight: bold;
     color: #fff;
-}
-#error {
-    border: 1px solid;
-    margin: 10px 0;
-    padding:15px 10px 15px 50px;
-    background-repeat: no-repeat;
-    background-position: 10px center;
-    color: #D8000C;
-    background-color: #FFBABA;
-    background-image: url('images/Backgrounds/msg.png');
 }
 
 /* Used to make a new line */

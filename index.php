@@ -37,6 +37,20 @@ if(!file_exists('settings.php')) {
 
 include_once 'settings.php';
 
+// Config
+if (!file_exists('config.php')) {
+    $data = "
+    \$config = array(
+        'display_position' => true,
+        'display_group' => false,
+        'display_ip' => false
+    );
+    ";
+    file_put_contents('config.php', $data);
+}
+
+include_once 'config.php';
+
 /* If you want a background image, you can use these variables to set one
    $rand gets a random number, and then displays the image with the name as that number
    default:
