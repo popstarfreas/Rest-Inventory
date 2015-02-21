@@ -40,6 +40,7 @@ include_once 'settings.php';
 // Config
 if (!file_exists('config.php')) {
     $data = "
+    <?php
     \$config = array(
         'display_position' => true,
         'display_group' => false,
