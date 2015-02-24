@@ -12,7 +12,7 @@ $list = '<div id="players">';
 foreach ($player['list'] as $player) {
     if (is_array($player)) {
         foreach ($player as $p) {
-            if (!empty($p)) $list .= '<a href="?player=' . str_replace('#', '%23', $p['nickname']) . '">' . $p['nickname'] . '<br />';
+            if (!empty($p)) $list .= '<a href="?player=' . str_replace('#', '%23', $p['nickname']) . '">' . $p['nickname'] . '</a><br />';
         }
     }
 }
