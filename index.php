@@ -69,11 +69,11 @@ $location = "$ip:$port";
 
 // If no player is specified, list players online
 if (!isset($_GET['player'])) {
-    $token = json_decode(file_get_contents("http://$location/token/create/$rest_user/$rest_pass", 0, $ctx));
+    $token = json_decode(@file_get_contents("http://$location/token/create/$rest_user/$rest_pass", 0, $ctx));
 
     if (isset($token->token)) {
-        $player['list'] = json_decode(file_get_contents("http://$location/v2/players/list?token=" . $token->token),true);
-        $status = json_decode(file_get_contents("http://$location/v2/server/status?token=" . $token->token), true);
+        $player['list'] = json_decode(@file_get_contents("http://$location/v2/players/list?token=" . $token->token), true);
+        $status = json_decode(@file_get_contents("http://$location/v2/server/status?token=" . $token->token), true);
         $player['count'] = $status['playercount'];
     } else {
         exit('Server failed to respond.');
@@ -91,10 +91,10 @@ if (!isset($_GET['player'])) {
 $player['GET'] = str_replace(' ', '%20', $_GET['player']);
 
 // Grab a token
-$token = json_decode(file_get_contents("http://$location/token/create/$rest_user/$rest_pass", 0, $ctx));
+$token = json_decode(@file_get_contents("http://$location/token/create/$rest_user/$rest_pass", 0, $ctx));
 if (isset($token->token)) {
     // Run the command
-    $player['info'] = json_decode(file_get_contents("http://$location/v3/players/read?token=" . $token->token . '&player=' . $player['GET']), true);
+    $player['info'] = json_decode(@file_get_contents("http://$location/v3/players/read?token=" . $token->token . '&player=' . $player['GET']), true);
 
     // Check player is on server
     if(!isset($player['info']['inventory'])) {
