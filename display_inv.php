@@ -15,8 +15,11 @@ $player['items'] = explode(', ', $player['info']['inventory'].", ".$player['info
 
 $i = 0;
 foreach ($player['items'] as $item) {
+    if ($i > 87) {
+        break;
+    }
     $itemInfo = explode(':', $item);
-    if ($i >= 59 && $i < 75 && $itemInfo[0] !== "0") {
+    if ($i >= 59 && $i < 79 && $itemInfo[0] !== "0") {
         $item_name2 = str_replace(' ', '_', $itemInfo[0] > 0 ? $itemIDs[$itemInfo[0]] : $itemNIDs[$itemInfo[0]]) . '.png';
         $img_tag = '<img title="' . substr($item_name2, 0, -4) . '" src="items_images/' . $item_name2 . '"/>';
     } else {
@@ -63,9 +66,9 @@ foreach ($player['items'] as $item) {
         $body .= '<span id="Armor">Equip</span><table><tr>';
     }
 
-    if($i === 67 || $i === 75) {
+    if ($i === 68 || $i === 78) {
         $body .= '</tr></table></div>'."\n\n".'<div class="stuff_table'.($i === 75 ? ' stuff_tableL' : NULL).'">';
-        $body .= '<span id="'.($i === 67 ? 'Vanity' : 'Dye').'">'.($i === 67 ? 'Social' : 'Dye').'</span><table><tr>';
+        $body .= '<span id="' . ($i === 68 ? 'Vanity' : 'Dye') . '">' . ($i === 68 ? 'Social' : 'Dye') . '</span><table><tr>';
     }
 
     // The last table has only 1 row per table so we close the current row
@@ -76,7 +79,7 @@ foreach ($player['items'] as $item) {
 
 
     if ($itemInfo[0] == "" || $item_name2 == "") {
-        if ($i === 58) {
+        if ($i === 58 || $i === 78 || $i === 68) {
         } else {
             $body .= '<td><div class="item"><div class="item2"><span class="empty"></span></div>';
             if ($i < 10) {
@@ -115,7 +118,7 @@ $body .= '</div>';
 
 // Display Player Position
 if ($config['display_position'])
-$body .= '<div id="Position">Position: <em>'.$player['info']['position'].'</em></div>';
+    $body .= '<div id="Position">Position: <em>' . $player['info']['position'] . '</em></div>';
 
 // Display Player Group
 if ($config['display_group'])
