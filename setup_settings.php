@@ -88,7 +88,7 @@ if ($form) {
 
     echo 'Please enter the values for the REST API access
           <form action="" method="POST">
-            IP: <input type="text" name="ip" placeholder="127.0.0.l" value="'.$ip.'"/> <br />
+            IP: <input type="text" name="ip" placeholder="127.0.0.1" value="'.$ip.'"/> <br />
             Port: <input type="text" name="port" placeholder="7878" value="'.$port.'"/> <br />
             Username: <input type="text" name="username" placeholder="RestUser" value="'.$username.'"/> <br />
             Password: <input type="password" name="password" value="'.$password.'"/> <br />
