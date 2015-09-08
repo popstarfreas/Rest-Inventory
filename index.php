@@ -89,6 +89,7 @@ if (!isset($_GET['player'])) {
 
 // Remove spaces
 $player['GET'] = str_replace(' ', '%20', $_GET['player']);
+$player['GET'] = str_replace('#', '%23', $player['GET']);
 
 // Grab a token
 $token = json_decode(@file_get_contents("http://$location/token/create/$rest_user/$rest_pass", 0, $ctx));
