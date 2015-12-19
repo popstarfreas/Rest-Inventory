@@ -2749,6 +2749,11 @@ $itemIDs = array(
     2741 => "Grasshopper Cage",
     2742 => "Music Box (Underground Crimson)",
     2743 => "Count",
+    2744 => "Cactus Platform",
+    2745 => "Boreal Wood Sword",
+    2746 => "Boreal Wood Hammer",
+    2747 => "Boreal Wood Bow",
+    2748 => "Glass Chest",
     2749 => 'Xeno Staff',
     2750 => 'Meteor Staff',
     2751 => 'Living Cursed Fire Block',
@@ -2927,6 +2932,7 @@ $itemIDs = array(
     2924 => 'Giant Cursed Skull Banner',
     2925 => 'Giant Flying Fox Banner',
     2926 => 'Gingerbread Man Banner',
+    2927 => 'Steampunk Platform',
     2928 => 'Green Slime Banner',
     2929 => 'Headless Horseman Banner',
     2930 => 'Hell Armored Bones Banner',
@@ -3601,7 +3607,6 @@ $itemIDs = array(
     3599 => 'Loki\'s Dye',
     3600 => 'Shadowflame Hades Dye'
 );
-
 $itemNIDs = array(
     48 => "Platinum Bow",
     47 => "Platinum Hammer",
