@@ -75,6 +75,7 @@ if (!isset($_GET['player'])) {
         $player['list'] = json_decode(@file_get_contents("http://$location/v2/players/list?token=" . $token->token), true);
         $status = json_decode(@file_get_contents("http://$location/v2/server/status?token=" . $token->token), true);
         $player['count'] = $status['playercount'];
+        @file_get_contents("http://$location/token/destroy/".$token->token."?token=".$token->token);
     } else {
         exit('Server failed to respond.');
     }
@@ -82,9 +83,7 @@ if (!isset($_GET['player'])) {
     if (!empty($player['list']))
         include_once 'display_users.php';
     else
-        echo 'Unable to display user list';
-            
-    exit;
+        exit('Unable to display user list');
 }
 
 // Remove spaces
@@ -104,6 +103,7 @@ if (isset($token->token)) {
         $background = $defaultBG;
         include_once 'display_inv.php';
     }
+    @file_get_contents("http://$location/token/destroy/".$token->token."?token=".$token->token);
 } else {
     exit('Server failed to respond.');
 }
