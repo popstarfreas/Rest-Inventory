@@ -1,0 +1,4 @@
+<?php
+
+die("Good day?");
+?>
