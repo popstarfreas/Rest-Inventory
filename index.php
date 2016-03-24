@@ -100,7 +100,7 @@ if (isset($token->token)) {
 
     // Check player is on server
     if(!isset($player['info']['inventory'])) {
-        exit('Player is not on the server');
+        echo 'Player is not on the server';
     } else {
         $background = $defaultBG;
         include_once 'display_inv.php';
