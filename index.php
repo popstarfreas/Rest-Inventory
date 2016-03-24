@@ -83,7 +83,9 @@ if (!isset($_GET['player'])) {
     if (!empty($player['list']))
         include_once 'display_users.php';
     else
-        exit('Unable to display user list');
+        echo 'Unable to display user list';
+        
+    exit;
 }
 
 // Remove spaces
