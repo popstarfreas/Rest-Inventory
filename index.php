@@ -69,13 +69,13 @@ $location = "$ip:$port";
 
 // If no player is specified, list players online
 if (!isset($_GET['player'])) {
-    $token = json_decode(@file_get_contents("http://$location/token/create/$rest_user/$rest_pass", 0, $ctx));
+    $response = json_decode(@file_get_contents("http://$location/token/create/$rest_user/$rest_pass", 0, $ctx));
 
-    if (isset($token->token)) {
-        $player['list'] = json_decode(@file_get_contents("http://$location/v2/players/list?token=" . $token->token), true);
-        $status = json_decode(@file_get_contents("http://$location/v2/server/status?token=" . $token->token), true);
+    if (isset($response->token)) {
+        $player['list'] = json_decode(@file_get_contents("http://$location/v2/players/list?token=" . $response->token), true);
+        $status = json_decode(@file_get_contents("http://$location/v2/server/status?token=" . $response->token), true);
         $player['count'] = $status['playercount'];
-        @file_get_contents("http://$location/token/destroy/".$token->token."?token=".$token->token);
+        @file_get_contents("http://$location/token/destroy/".$response->token."?token=".$response->token);
     } else {
         exit('Server failed to respond.');
     }
@@ -93,10 +93,10 @@ $player['GET'] = str_replace(' ', '%20', $_GET['player']);
 $player['GET'] = str_replace('#', '%23', $player['GET']);
 
 // Grab a token
-$token = json_decode(@file_get_contents("http://$location/token/create/$rest_user/$rest_pass", 0, $ctx));
-if (isset($token->token)) {
+$response = json_decode(@file_get_contents("http://$location/token/create/$rest_user/$rest_pass", 0, $ctx));
+if (isset($response->token)) {
     // Run the command
-    $player['info'] = json_decode(@file_get_contents("http://$location/v3/players/read?token=" . $token->token . '&player=' . $player['GET']), true);
+    $player['info'] = json_decode(@file_get_contents("http://$location/v3/players/read?token=" . $response->token . '&player=' . $player['GET']), true);
 
     // Check player is on server
     if(!isset($player['info']['inventory'])) {
@@ -105,7 +105,7 @@ if (isset($token->token)) {
         $background = $defaultBG;
         include_once 'display_inv.php';
     }
-    @file_get_contents("http://$location/token/destroy/".$token->token."?token=".$token->token);
+    @file_get_contents("http://$location/token/destroy/".$response->token."?token=".$response->token);
 } else {
     exit('Server failed to respond.');
 }
