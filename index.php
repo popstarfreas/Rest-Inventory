@@ -69,7 +69,7 @@ $location = "$ip:$port";
 
 // If no player is specified, list players online
 if (!isset($_GET['player'])) {
-    $response = json_decode(@file_get_contents("http://$location/token/create/$rest_user/$rest_pass", 0, $ctx));
+    $response = json_decode(@file_get_contents("http://$location/v2/token/create?username=".urlencode($rest_user)."&password=".urlencode($rest_pass), 0, $ctx));
 
     if (isset($response->token)) {
         $player['list'] = json_decode(@file_get_contents("http://$location/v2/players/list?token=" . $response->token), true);
@@ -93,7 +93,7 @@ $player['GET'] = str_replace(' ', '%20', $_GET['player']);
 $player['GET'] = str_replace('#', '%23', $player['GET']);
 
 // Grab a token
-$response = json_decode(@file_get_contents("http://$location/token/create/$rest_user/$rest_pass", 0, $ctx));
+$response = json_decode(@file_get_contents("http://$location/v2/token/create?username=".urlencode($rest_user)."&password=".urlencode($rest_pass), 0, $ctx));
 if (isset($response->token)) {
     // Run the command
     $player['info'] = json_decode(@file_get_contents("http://$location/v3/players/read?token=" . $response->token . '&player=' . $player['GET']), true);
