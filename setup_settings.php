@@ -32,10 +32,10 @@ function handle_form($post, $ctx)
 
     $location = "$ip:$port";
     // Test Connection
-    $response = json_decode(file_get_contents("http://$location/token/create/$rest_user/$rest_pass", 0, $ctx));
+    $response = json_decode(file_get_contents("http://$location/v2/token/create?username=$rest_user&password=$rest_pass", 0, $ctx));
 
     if (empty($response)) {
-        $errors[] = 'Failed to connect to ' . $location;
+        $errors[] = "Failed to connect to $location";
     } else {
         if ($response->status == "401") {
             $errors[] = 'Invalid username/password combination';
