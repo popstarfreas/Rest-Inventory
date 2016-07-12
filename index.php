@@ -68,7 +68,7 @@ $player['GET'] = null;
 $location = "$ip:$port";
 
 // Gets new token and caches
-function getNewToken() {
+function getNewToken($rest_user, $rest_pass, $location, $ctx) {
     $token = null;
     $response = json_decode(@file_get_contents("http://$location/v2/token/create?username=".urlencode($rest_user)."&password=".urlencode($rest_pass), 0, $ctx));
     if (isset($response->token)) {
@@ -82,7 +82,7 @@ function getNewToken() {
 // Get cached token
 $token = file_get_contents('token');
 if (strlen($token) === 0) {
-    $token = getNewToken();
+    $token = getNewToken($rest_user, $rest_pass, $location, $ctx);
 
     if ($token === null) {
         exit('Could not get token.');
@@ -92,8 +92,8 @@ if (strlen($token) === 0) {
 // If no player is specified, list players online
 if (!isset($_GET['player'])) {
     $response = json_decode(@file_get_contents("http://$location/v2/players/list?token=" . $token), true);
-    if ($response->status === "403") {
-        $token = getNewToken();
+    if ($response['status'] === "403") {
+        $token = getNewToken($rest_user, $rest_pass, $location, $ctx);
         $response = json_decode(@file_get_contents("http://$location/v2/players/list?token=" . $token), true);
     }
 
@@ -118,8 +118,8 @@ $response = json_decode(@file_get_contents("http://$location/v2/token/create?use
 if (isset($response->token)) {
     // Run the command
     $response = json_decode(@file_get_contents("http://$location/v3/players/read?token=" . $response->token . '&player=' . $player['GET']), true);
-    if ($response->status === "403") {
-        $token = getNewToken();
+    if ($response['status'] === "403") {
+        $token = getNewToken($rest_user, $rest_pass, $location, $ctx);
         $response = json_decode(@file_get_contents("http://$location/v3/players/read?token=" . $response->token . '&player=' . $player['GET']), true);
     }
 
