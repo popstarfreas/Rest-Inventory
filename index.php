@@ -67,18 +67,39 @@ $defaultBG = "backgrounds/$rand.jpg";
 $player['GET'] = null;
 $location = "$ip:$port";
 
+// Gets new token and caches
+function getNewToken() {
+    $token = null;
+    $response = json_decode(@file_get_contents("http://$location/v2/token/create?username=".urlencode($rest_user)."&password=".urlencode($rest_pass), 0, $ctx));
+    if (isset($response->token)) {
+        $token = $response->token;
+        file_put_contents('token', $token);
+    }
+
+    return $token;
+}
+
+// Get cached token
+$token = file_get_contents('token');
+if (strlen($token) === 0) {
+    $token = getNewToken();
+
+    if ($token === null) {
+        exit('Could not get token.');
+    }
+}
+
 // If no player is specified, list players online
 if (!isset($_GET['player'])) {
-    $response = json_decode(@file_get_contents("http://$location/v2/token/create?username=".urlencode($rest_user)."&password=".urlencode($rest_pass), 0, $ctx));
-
-    if (isset($response->token)) {
-        $player['list'] = json_decode(@file_get_contents("http://$location/v2/players/list?token=" . $response->token), true);
-        $status = json_decode(@file_get_contents("http://$location/v2/server/status?token=" . $response->token), true);
-        $player['count'] = $status['playercount'];
-        @file_get_contents("http://$location/token/destroy/".$response->token."?token=".$response->token);
-    } else {
-        exit('Server failed to respond.');
+    $response = json_decode(@file_get_contents("http://$location/v2/players/list?token=" . $token), true);
+    if ($response->status === "403") {
+        $token = getNewToken();
+        $response = json_decode(@file_get_contents("http://$location/v2/players/list?token=" . $token), true);
     }
+
+    $player['list'] = $response;
+    $status = json_decode(@file_get_contents("http://$location/v2/server/status?token=" . $token), true);
+    $player['count'] = $status['playercount'];
 
     if (!empty($player['list']))
         include_once 'display_users.php';
@@ -96,7 +117,13 @@ $player['GET'] = str_replace('#', '%23', $player['GET']);
 $response = json_decode(@file_get_contents("http://$location/v2/token/create?username=".urlencode($rest_user)."&password=".urlencode($rest_pass), 0, $ctx));
 if (isset($response->token)) {
     // Run the command
-    $player['info'] = json_decode(@file_get_contents("http://$location/v3/players/read?token=" . $response->token . '&player=' . $player['GET']), true);
+    $response = json_decode(@file_get_contents("http://$location/v3/players/read?token=" . $response->token . '&player=' . $player['GET']), true);
+    if ($response->status === "403") {
+        $token = getNewToken();
+        $response = json_decode(@file_get_contents("http://$location/v3/players/read?token=" . $response->token . '&player=' . $player['GET']), true);
+    }
+
+    $player['info'] = $response;
 
     // Check player is on server
     if(!isset($player['info']['inventory'])) {
@@ -105,7 +132,6 @@ if (isset($response->token)) {
         $background = $defaultBG;
         include_once 'display_inv.php';
     }
-    @file_get_contents("http://$location/token/destroy/".$response->token."?token=".$response->token);
 } else {
     exit('Server failed to respond.');
 }
