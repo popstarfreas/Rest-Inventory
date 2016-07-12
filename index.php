@@ -92,6 +92,8 @@ if (strlen($token) === 0) {
 // If no player is specified, list players online
 if (!isset($_GET['player'])) {
     $response = json_decode(@file_get_contents("http://$location/v2/players/list?token=" . $token), true);
+    
+    // If this token is now unusable, get a new one
     if ($response['status'] === "403") {
         $token = getNewToken($rest_user, $rest_pass, $location, $ctx);
         $response = json_decode(@file_get_contents("http://$location/v2/players/list?token=" . $token), true);
@@ -118,6 +120,8 @@ $response = json_decode(@file_get_contents("http://$location/v2/token/create?use
 if (isset($response->token)) {
     // Run the command
     $response = json_decode(@file_get_contents("http://$location/v3/players/read?token=" . $response->token . '&player=' . $player['GET']), true);
+
+    // If this token is now unusable, get a new one
     if ($response['status'] === "403") {
         $token = getNewToken($rest_user, $rest_pass, $location, $ctx);
         $response = json_decode(@file_get_contents("http://$location/v3/players/read?token=" . $response->token . '&player=' . $player['GET']), true);
