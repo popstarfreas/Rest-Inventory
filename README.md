@@ -1,7 +1,7 @@
 Rest-Inventory
 ==============
 
-REQUIREMENT: Uses tShock's REST API (with tShock v4.3) to display a users inventory
+REQUIREMENT: Uses tShock's REST API (with tShock v4.3.x) to display a users inventory
 
 Simply download the files into their own directory on your web server, and then visit said directory via your browser to run the index.php script. Firstly, it will unzip the items.zip in the items directory which contains all the item images. Next, it will present you with a form for the REST Credentials for the initial settings setup. After which the program is setup.
 
