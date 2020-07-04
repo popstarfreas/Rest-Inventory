@@ -1,7 +1,7 @@
 Rest-Inventory
 ==============
 
-REQUIREMENT: Uses tShock's REST API (with tShock v4.3.x) to display a users inventory
+REQUIREMENT: Uses tShock's REST API and https://github.com/Quinci135/playerreader to display the inventory
 
 Setup:
  * Download the files into their own directory on your web server
