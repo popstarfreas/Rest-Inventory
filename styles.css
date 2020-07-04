@@ -50,7 +50,7 @@ body {
     color: #fff;
 }
 
-#title, #Coins, #Ammo, #Armor, #Vanity, #Dye, #Buffs, #Position, #Group, #UserIP {
+#title, #Coins, #Ammo, #Armor, #Vanity, #Dye, #Piggy, #Safe, #Defenders_Forge, #Vault, #Equip, #Buffs, #Position, #Group, #UserIP, #AccountName, #PlayerName {
     text-shadow: 2px 2px 2px #000;
 }
 
@@ -66,7 +66,11 @@ body {
     top: 0.1em;
 }
 
-#Armor, #Vanity, #Dye {
+#Defenders_Forge #Safe #Piggy #Vault {
+    margin-left: 12px;
+    color: #fff;
+}
+#Armor, #Vanity, #Dye, #Equip {
     margin-right: 4px;
 }
 
@@ -90,8 +94,67 @@ body {
     clear: right;
 }
 
+#Piggy_Bank_Table {
+    float: left;
+    margin-top: -325px;
+    margin-left: 25px;
+    color: #fff;
+    clear: right;
+    padding: 12px;
+}
+
+#Safe_Table {
+    float: left;
+    margin-top: -50px;
+    margin-left: 25px;
+    color: #fff;
+    clear: right;
+    padding: 12px;
+}
+#DefendersForge_Table {
+    float: left;
+    margin-top: -5px;
+    margin-left: 25px;
+    color: #fff;
+    clear: left;
+    padding: 12px;
+}
+#Vault_Table {
+    float: left;
+    margin-top: -5px;
+    margin-left: 25px;
+    color: #fff;
+    clear: left;
+    padding: 12px;
+}
+#Misc_Dye_Tables {
+    position: absolute;
+    margin-top: 650px;
+    margin-bottom: 5px;
+    right: 105px;
+    float: right;
+    color: #fff;
+    padding: 5px;
+    text-align: center;
+}
+#Misc_Equip_Tables {
+    position: absolute;
+    margin-top: 650px;
+    margin-bottom: 5px;
+    right: 45px;
+    float: right;
+    color: #fff;
+    padding: 5px;
+    border-radius: 10px;
+    text-align: center;
+}
+#Trash_Table {
+    margin-top: -325px;
+    margin-left: -6px;
+    float: left;
+}
 #Buffs {
-    clear: both;
+    clear: left;
     color: #fff;
     font-weight: bold;
     margin-left: 25px;
@@ -108,7 +171,7 @@ body {
     opacity: 0.7;
 }
 
-#Position, #Group, #UserIP {
+#Position, #Group, #UserIP, #AccountName, #PlayerName {
     clear: left;
     margin-left: 25px;
     color: #fff;
@@ -134,7 +197,7 @@ td {
 }
 
 /* Item Object Properties */
-#Ammo_table .item, #Coins_table .item {
+#Ammo_table .item, #Coins_table .item{
     font-size: 65%;
     margin-right: 5px;
     margin-bottom: 5px;
@@ -147,7 +210,97 @@ td {
     border-radius: 10px;
     opacity: 0.85;
 }
-
+#Piggy_Bank_Table .item {
+    margin-right: 5px;
+    margin-bottom: 5px;
+    width: 3em;
+    height: 3em;
+    border: solid 1px rgb(114, 58, 93);
+    padding: 5px;
+    background-color: rgba(160, 47, 99, 0.8);
+    position: relative;
+    border-radius: 10px;
+    font-size: 13px;
+    opacity: 0.85;
+}
+#Safe_Table .item {
+    margin-right: 5px;
+    margin-bottom: 5px;
+    width: 3em;
+    height: 3em;
+    border: solid 1px rgb(66, 66, 66);
+    padding: 5px;
+    background-color: rgba(105, 105, 105, 0.8);
+    position: relative;
+    border-radius: 10px;
+    font-size: 13px;
+    opacity: 0.85;
+}
+#DefendersForge_Table .item {
+    margin-right: 5px;
+    margin-bottom: 5px;
+    width: 3em;
+    height: 3em;
+    border: solid 1px rgb(126, 139, 0);
+    padding: 5px;
+    background-color: rgba(171, 173, 48, 0.8);
+    position: relative;
+    border-radius: 10px;
+    font-size: 13px;
+    opacity: 0.85;
+}
+#Vault_Table .item {
+    margin-right: 5px;
+    margin-bottom: 5px;
+    width: 3em;
+    height: 3em;
+    border: solid 1px rgb(102, 25, 121);
+    padding: 5px;
+    background-color: rgba(133, 38, 177, 0.8);
+    position: relative;
+    border-radius: 10px;
+    font-size: 13px;
+    opacity: 0.85;
+}
+#Misc_Equip_Tables .item {
+    margin-right: 5px;
+    margin-bottom: 5px;
+    width: 3em;
+    height: 3em;
+    background-color: #287A65;
+    border-color: #266152;
+    padding: 5px;
+    position: relative;
+    border-radius: 10px;
+    font-size: 13px;
+    opacity: 0.85;
+}
+#Misc_Dye_Tables .item {
+    margin-right: 5px;
+    margin-bottom: 5px;
+    width: 3em;
+    height: 3em;
+    background-color: #287A65;
+    border-color: #266152;
+    padding: 5px;
+    position: relative;
+    border-radius: 10px;
+    font-size: 13px;
+    opacity: 0.85;
+}
+#Trash_Table .item {
+    margin-right: 5px;
+    margin-bottom: 5px;
+    width: 3em;
+    height: 3em;
+    background-color: rgb(68, 95, 109);
+    border-color: rgb(55, 74, 83);
+    padding: 5px;
+    position: relative;
+    border-radius: 10px;
+    font-size: 13px;
+    opacity: 0.85;
+}
 #Ammo_table td .num, #Coins_table td .num {
     position: absolute;
     left: 8px;
@@ -187,6 +340,9 @@ td {
     border-radius: 10px;
     font-size: 13px;
     opacity: 0.85;
+}
+.emptySlot {
+    opacity: 0.55;
 }
 
 td .num {

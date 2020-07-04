@@ -8,6 +8,8 @@
 
 $config = array(
     'display_position' => true,
-    'display_group' => false,
-    'display_ip' => false
+    'display_group' => true,
+    'display_ip' => false,
+    'display_playername' => true,
+    'display_accountname' =>  true
 );
