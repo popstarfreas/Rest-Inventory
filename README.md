@@ -1,6 +1,7 @@
 Rest-Inventory
 ==============
 For 1.4 compatibility look at https://github.com/popstarfreas/Rest-Inventory/tree/1.4-variant, please note that branch requires the use of another plugin to work.
+
 REQUIREMENT: Uses tShock's REST API (with tShock v4.3.x and above) to display a users inventory
 
 Setup:
